@@ -15,15 +15,15 @@ PI_SWIRL_Calc <- function(file, ...){
 groundLAI <- melt(data)
 colnames(groundLAI) <- c("Location","Corrected_LAI")
 
-groundLAI$Location <- factor(groundLAI$Location,levels=c("BG2","UW31","UW39","TAM"))
+groundLAI$Location <- factor(groundLAI$Location,levels=c("u1","u2","u3","u4","u5"))
 plotdata2 <- ggplot(groundLAI, aes(x=(Location), y=Corrected_LAI))+
   geom_boxplot(aes(fill=factor(Location)),outlier.shape=NA)+
   geom_point(color="black",shape=21,size=2,aes(fill = factor(Location)),position=position_jitterdodge(),alpha=0.4)+
   stat_summary(fun.y=mean, colour="green", geom="point", shape=18, size=4)+
   scale_fill_brewer(palette="YlOrRd")+
-  labs(x="Locations",y="Leaf Area Index (LAI)") + #,colour="Friction/nVelocity/n(m/s)") 
+  labs(x="Friction Velocity",y="PM 10 Flux") + #,colour="Friction/nVelocity/n(m/s)") 
   #theme(panel.grid.minor = element_line(color='black'))
-  ggtitle("Leaf Area Index (LAI) - LI-COR Method") + 
+  ggtitle("PI-SWIRL Result") + 
   theme(plot.margin = unit(c(1.2,1.2,1.2,1.2), "cm")) +
   theme(plot.title = element_text(lineheight=.8, face="bold", vjust=3))
 
