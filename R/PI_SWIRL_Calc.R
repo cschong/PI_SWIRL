@@ -5,6 +5,10 @@
 #' @export
 #' @param file a csv file.
 #' @param ... arguments passed to read.csv
+library(reshape)
+library(ggplot2)
+library(plyr)
+
 PI_SWIRL_Calc <- function(file, ...){
   if(!grepl(".csv$", file)){
     stop("Uploaded file must be a .csv file!")
