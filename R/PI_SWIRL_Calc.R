@@ -30,5 +30,6 @@ plotdata2 <- ggplot(groundLAI, aes(x=(Location), y=Corrected_LAI))+
 
 plotdata2 <- plotdata2 #+ guides(fill=guide_legend(title="Friction/nVelocity/n(m/s)"))
 plotdata2 <- plotdata2 + guides(fill=FALSE)
-
+plotdata2
+  
 }
