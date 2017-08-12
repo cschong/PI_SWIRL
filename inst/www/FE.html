@@ -22,7 +22,7 @@
         //disable the button during upload
         $("#submitbutton").attr("disabled", "disabled");
         //perform the request
-        var req = ocpu.call("readcsvnew", {
+        var req = $("#plotdiv").rplot("PI_SWIRL_Calc", {
           file : myfile,
           header : myheader
         }, function(session){
@@ -70,7 +70,7 @@
     </select> 
     <br><br>
 
-    <button id="submitbutton" type="button">Plot!</button>
+    <button id="submitbutton" type="button">Plot</button>
     <br> <br>   
     <div id="plotdiv"></div>      
 
