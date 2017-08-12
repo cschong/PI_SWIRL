@@ -14,7 +14,7 @@ PI_SWIRL_Calc <- function(file, ...){
   #boxplot(data)
 
 groundLAI <- melt(data,id=c("id"))
-colnames(groundLAI) <- c("Location","Corrected_LAI")
+colnames(groundLAI) <- c("id","Location","Corrected_LAI")
 
 groundLAI$Location <- factor(groundLAI$Location,levels=c("u1","u2","u3","u4","u5"))
 plotdata2 <- ggplot(groundLAI, aes(x=(Location), y=Corrected_LAI))+
